@@ -10,14 +10,21 @@
 
 
 import zmq
-#from multiprocessing import Process    #threading instead?
 from threading import Thread
-    # i guess I'm not sure how to do multiprocessing.
+import Queue    #for thread-safe message sending, to workload and to record.
 
 
 # RESOURCES
 #   http://stackoverflow.com/questions/2846653/python-multithreading-for-dummies
-#   
+#   https://docs.python.org/2/library/multiprocessing.html
+
+
+# NOTES:
+#   I think for now I'm just going to use threading, and only move to multiprocessing if I run into trouble.
+
+
+# QUESTIONS
+#   should I derive Thread/Process? or just make functions that threads would target?
 
 
 class Listener(Thread):
